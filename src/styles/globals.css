@@ -194,3 +194,54 @@ body {
     padding: 1rem;
   }
 }
+/* Chart container improvements */
+.chart-container {
+  position: relative;
+  width: 100%;
+  max-width: 512px;
+  margin: 0 auto;
+  height: 320px;
+  max-height: 420px;
+}
+
+.small-chart-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  height: 260px;
+}
+
+/* Ensure charts are responsive */
+.chart-container canvas {
+  max-width: 100%;
+  height: auto !important;
+}
+
+/* Dark mode support for charts */
+.dark .chart-container {
+  filter: brightness(0.9);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .chart-container {
+    height: 280px;
+    max-height: 350px;
+  }
+  
+  .small-chart-container {
+    height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chart-container {
+    height: 250px;
+    max-height: 300px;
+  }
+  
+  .small-chart-container {
+    height: 200px;
+  }
+}

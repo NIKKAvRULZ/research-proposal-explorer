@@ -5,12 +5,12 @@ import Navigation from './components/common/Navigation'
 import Footer from './components/common/Footer'
 import BackToTop from './components/common/BackToTop'
 import HomePage from './components/home/HomePage'
-import Topic1 from './components/topics/Topic1'
-import Topic2 from './components/topics/Topic2'
-import Topic3 from './components/topics/Topic3'
-import Topic4 from './components/topics/Topic4'
-import Topic5 from './components/topics/Topic5'
-import Topic6 from './components/topics/Topic6'
+import Topic1 from  './components/topics/Topic1'
+import Topic2 from  './components/topics/Topic2'
+import Topic3 from  './components/topics/Topic3'
+import Topic4 from  './components/topics/Topic4'
+import Topic5 from  './components/topics/Topic5'
+import Topic6 from  './components/topics/Topic6'
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home')
