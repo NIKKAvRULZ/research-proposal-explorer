@@ -599,20 +599,69 @@ const Chart = ({ id, type, data, options, className = '' }) => {
   const chartData = data || getDefaultData()
   const chartOptions = options || getDefaultOptions()
 
+  // Detect dark mode (class on documentElement or prefers-color-scheme)
+  const isDark = typeof window !== 'undefined' && (
+    document.documentElement.classList.contains('dark') ||
+    (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
+  )
+
+  // Apply dark/light friendly colors for axes, grid and legend
+  const textColor = isDark ? '#dbeafe' : '#0f172a'
+  const gridColor = isDark ? 'rgba(255,255,255,0.06)' : 'rgba(15,23,42,0.06)'
+
+  const applyThemeToOptions = (opts) => {
+    const merged = JSON.parse(JSON.stringify(opts || {}))
+
+    // Plugins: title & legend
+    merged.plugins = merged.plugins || {}
+    merged.plugins.legend = merged.plugins.legend || {}
+    merged.plugins.legend.labels = merged.plugins.legend.labels || {}
+    merged.plugins.legend.labels.color = merged.plugins.legend.labels.color || textColor
+
+    if (merged.plugins.title) {
+      merged.plugins.title.color = merged.plugins.title.color || textColor
+    }
+
+    // Scales: x and y
+    merged.scales = merged.scales || {}
+    const applyScale = (scale) => {
+      if (!scale) return
+      scale.ticks = scale.ticks || {}
+      scale.ticks.color = scale.ticks.color || textColor
+      scale.grid = scale.grid || {}
+      scale.grid.color = scale.grid.color || gridColor
+    }
+
+    if (merged.scales.x) applyScale(merged.scales.x)
+    if (merged.scales.y) applyScale(merged.scales.y)
+    if (merged.scales.r) {
+      merged.scales.r.angleLines = merged.scales.r.angleLines || {}
+      merged.scales.r.angleLines.color = merged.scales.r.angleLines.color || gridColor
+      merged.scales.r.grid = merged.scales.r.grid || {}
+      merged.scales.r.grid.color = merged.scales.r.grid.color || gridColor
+      merged.scales.r.pointLabels = merged.scales.r.pointLabels || {}
+      merged.scales.r.pointLabels.color = merged.scales.r.pointLabels.color || textColor
+    }
+
+    return merged
+  }
+
+  const themedOptions = applyThemeToOptions(chartOptions)
+
   const renderChart = () => {
     switch (type) {
       case 'line':
-        return <Line data={chartData} options={chartOptions} />
+        return <Line data={chartData} options={themedOptions} />
       case 'bar':
-        return <Bar data={chartData} options={chartOptions} />
+        return <Bar data={chartData} options={themedOptions} />
       case 'doughnut':
-        return <Doughnut data={chartData} options={chartOptions} />
+        return <Doughnut data={chartData} options={themedOptions} />
       case 'radar':
-        return <Radar data={chartData} options={chartOptions} />
+        return <Radar data={chartData} options={themedOptions} />
       case 'polarArea':
-        return <PolarArea data={chartData} options={chartOptions} />
+        return <PolarArea data={chartData} options={themedOptions} />
       default:
-        return <Bar data={chartData} options={chartOptions} />
+        return <Bar data={chartData} options={themedOptions} />
     }
   }
 
