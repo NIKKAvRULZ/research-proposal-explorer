@@ -14,7 +14,8 @@ const Topic3 = () => {
   ]
 
   return (
-    <div className="space-y-8">
+    <div id="page-topic3" className="py-8 px-4">
+      <div className="max-w-6xl mx-auto space-y-8">
       {/* Header Card */}
       <Card className="mb-8">
         <div className="flex items-center mb-4">
@@ -27,9 +28,10 @@ const Topic3 = () => {
           </div>
         </div>
         <p className="text-base md:text-lg text-gray-700 leading-relaxed">
-          This section details the "AI-Driven SDLC" proposal. Explore how Large Language Models can transform requirements engineering, 
+          This section details the "AI-Driven SDLC" proposal. Explore how Large Language Models can transform requirements engineering,
           code generation, testing, and developer experience.
         </p>
+        <p className="text-sm text-gray-500 mt-3">This page is designed to give group members a clear overview and can be shared with supervisors.</p>
       </Card>
 
       {/* Core Concepts */}
@@ -295,6 +297,7 @@ const Topic3 = () => {
           )}
         </div>
       </Card>
+      </div>
     </div>
   )
 }

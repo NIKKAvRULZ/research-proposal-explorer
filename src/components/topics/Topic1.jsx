@@ -14,7 +14,8 @@ const Topic1 = () => {
   ]
 
   return (
-    <div className="space-y-8">
+    <div id="page-topic1" className="py-8 px-4">
+      <div className="max-w-6xl mx-auto space-y-8">
       {/* Header Card */}
       <Card className="mb-8">
         <div className="flex items-center mb-4">
@@ -27,9 +28,10 @@ const Topic1 = () => {
           </div>
         </div>
         <p className="text-base md:text-lg text-gray-700 leading-relaxed">
-          This section details the "Agri-Adapt" proposal. Explore its core concepts, the system's data-flow architecture, 
+          This section details the "Agri-Adapt" proposal. Explore its core concepts, the system's data-flow architecture,
           its potential impact, and the individual research components for the four-member team.
         </p>
+        <p className="text-sm text-gray-500 mt-3">This page is designed to give group members a clear overview and can be shared with supervisors.</p>
       </Card>
 
       {/* Core Concepts */}
@@ -279,6 +281,7 @@ const Topic1 = () => {
           )}
         </div>
       </Card>
+      </div>
     </div>
   )
 }

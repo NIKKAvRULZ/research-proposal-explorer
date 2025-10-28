@@ -8,13 +8,18 @@ const HeroSection = () => {
           <i className="fas fa-lightbulb text-indigo-600 dark:text-indigo-400"></i>
         </div>
         <h2 className="text-2xl font-bold text-gray-800 dark:text-white">
-          Welcome to the Research Explorer
+          Research Proposal Explorer
         </h2>
       </div>
       <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-        This application provides an interactive deep-dive into six software engineering research proposals. 
-        Use this page for a high-level comparison, or select a topic from the navigation to explore its specific goals, 
-        system architecture, potential impact, and detailed breakdown of all individual research components.
+        This website was created to present the topics our group has selected for research. Its primary purpose is to
+        give group members a clear, easy-to-read overview of each topic so they can get to know the ideas and scope.
+        The site also serves as a concise presentation that can be shared with supervisors when needed.
+      </p>
+
+      <p className="text-sm md:text-base text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
+        Use this page for a high-level comparison of projects, or select a topic from the navigation to explore its
+        goals, proposed system architecture, potential impact, and a detailed breakdown of the research components.
       </p>
     </div>
   )

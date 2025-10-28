@@ -81,23 +81,31 @@ const ProjectComparison = () => {
       <h2 className="text-2xl font-bold text-center text-gray-800 dark:text-white mb-8">
         Project Comparison
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {stats.map((stat, index) => (
-          <div key={index} className="stat-card bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 text-center">
-            <div className={`stat-number text-2xl font-bold ${getTextColor(stat.color)} mb-2`}>
-              {stat.value}
+          <div key={index} className="stat-card bg-white dark:bg-gray-800 rounded-lg shadow-md p-5">
+            <div className="flex items-center justify-between mb-3">
+              <div>
+                <div className={`text-base font-semibold ${getTextColor(stat.color)}`}>{stat.name}</div>
+                <div className="text-xs text-gray-500 dark:text-gray-400">{stat.label}</div>
+              </div>
+              <div className={`text-xl font-bold ${getTextColor(stat.color)}`}>{stat.value}</div>
             </div>
-            <div className="stat-label text-sm text-gray-600 dark:text-gray-400 mb-4">
-              {stat.label}
-            </div>
-            <div className="progress-bar bg-gray-200 dark:bg-gray-700 rounded-full h-2 mt-4">
-              <div 
-                className={`progress-fill h-2 rounded-full ${getColorClasses(stat.color)} transition-all duration-500`}
+
+            <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 overflow-hidden">
+              <div
+                className={`${getColorClasses(stat.color)} h-3 rounded-full transition-all duration-500`}
                 style={{ width: `${stat.percentage}%` }}
-              ></div>
+                aria-valuenow={stat.percentage}
+                aria-valuemin={0}
+                aria-valuemax={100}
+                role="progressbar"
+              />
             </div>
-            <div className="text-xs text-gray-500 dark:text-gray-400 mt-2">
-              {stat.description}
+
+            <div className="flex items-center justify-between mt-3 text-xs text-gray-500 dark:text-gray-400">
+              <div>{stat.description}</div>
+              <div className="font-medium">{stat.percentage}%</div>
             </div>
           </div>
         ))}

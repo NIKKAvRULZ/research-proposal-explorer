@@ -113,88 +113,79 @@ const TopicCards = ({ onTopicSelect }) => {
   }
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
       {topics.map(topic => {
         const color = getColorClasses(topic.color)
-        
+
         return (
-          <div 
-            key={topic.id} 
-            className={`topic-card bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-l-4 ${color.border}`}
+          <article
+            key={topic.id}
+            role="button"
+            tabIndex={0}
+            onClick={() => onTopicSelect(topic.id)}
+            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') onTopicSelect(topic.id) }}
+            className={`topic-card bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-transform duration-200 transform hover:-translate-y-1 border-l-4 ${color.border} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-300`}
+            aria-label={`Explore ${topic.title}`}
           >
             <div className="p-6 h-full flex flex-col">
-              <div className="flex justify-between items-start mb-4">
-                <h2 className={`text-2xl font-bold ${color.text}`}>{topic.title}</h2>
-                <span className={`px-3 py-1 rounded-full text-sm font-medium ${color.pill}`}>
-                  {topic.tag}
-                </span>
+              <div className="flex items-center justify-between mb-4">
+                <div>
+                  <h2 className={`text-xl font-semibold ${color.text}`}>{topic.title}</h2>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">{topic.tag}</p>
+                </div>
+                <div className="ml-4">
+                  <span className={`inline-flex items-center px-2 py-1 rounded text-xs font-medium ${color.pill}`}>Preview</span>
+                </div>
               </div>
-              
-              <p className="text-gray-600 dark:text-gray-300 mb-6 flex-grow">
+
+              <p className="text-gray-600 dark:text-gray-300 mb-6 flex-grow text-sm">
                 {topic.description}
               </p>
-              
-              <div className="space-y-4 mb-6">
+
+              <div className="space-y-3 mb-6">
                 <div>
-                  <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2 flex items-center">
-                    <i className="fas fa-bullseye mr-2"></i>
+                  <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-1 flex items-center text-sm">
+                    <i className="fas fa-bullseye mr-2 text-xs"></i>
                     Key Innovation
                   </h4>
-                  <p className={`text-sm text-gray-600 dark:text-gray-400 p-3 rounded-lg ${color.light}`}>
-                    {topic.innovation}
-                  </p>
+                  <p className={`text-sm text-gray-600 dark:text-gray-400 p-2 rounded-lg ${color.light}`}>{topic.innovation}</p>
                 </div>
-                
+
                 <div>
-                  <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2 flex items-center">
-                    <i className="fas fa-users mr-2"></i>
-                    Target Audience
+                  <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-1 flex items-center text-sm">
+                    <i className="fas fa-users mr-2 text-xs"></i>
+                    Audience
                   </h4>
                   <p className="text-sm text-gray-600 dark:text-gray-400">{topic.audience}</p>
                 </div>
               </div>
 
-              <div className="mb-6">
-                <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-3 flex items-center">
-                  <i className={`fas ${topic.sdgs ? 'fa-globe-americas' : 'fa-cogs'} mr-2`}></i>
-                  {topic.sdgs ? 'Sustainable Development Goals' : 'Research Components'}
+              <div className="mb-4">
+                <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2 text-sm flex items-center">
+                  <i className={`fas ${topic.sdgs ? 'fa-globe-americas' : 'fa-cogs'} mr-2 text-xs`}></i>
+                  {topic.sdgs ? 'SDGs / Goals' : 'Components'}
                 </h4>
-                <div className="grid grid-cols-2 gap-2">
+                <div className="flex flex-wrap gap-2">
                   {(topic.sdgs || topic.components)?.map((item, index) => (
-                    <div key={index} className={`${color.light} p-2 rounded text-center`}>
-                      <span className={`font-medium ${color.text}`}>{item}</span>
-                      {topic.sdgs && (
-                        <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
-                          {item === 'SDG 2' && 'Zero Hunger'}
-                          {item === 'SDG 6' && 'Clean Water'}
-                          {item === 'SDG 13' && 'Climate Action'}
-                          {item === 'SDG 12' && 'Responsible Consumption'}
-                          {item === 'SDG 3' && 'Good Health'}
-                          {item === 'SDG 11' && 'Sustainable Cities'}
-                        </p>
-                      )}
-                      {topic.components && (
-                        <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
-                          {index === 0 && 'Requirements Engineering'}
-                          {index === 1 && 'Code Generation'}
-                          {index === 2 && 'Testing Systems'}
-                          {index === 3 && 'HCI Study'}
-                        </p>
-                      )}
-                    </div>
+                    <span key={index} className={`px-2 py-1 text-xs rounded ${color.light} ${color.text}`}>
+                      {item}
+                    </span>
                   ))}
                 </div>
               </div>
 
-              <button
-                onClick={() => onTopicSelect(topic.id)}
-                className={`w-full ${color.bg} text-white font-medium py-3 px-5 rounded-lg transition-colors duration-200 flex items-center justify-center shadow-lg hover:shadow-xl`}
-              >
-                <i className="fas fa-arrow-right mr-2"></i>
-                Explore {topic.title}
-              </button>
+              <div>
+                <button
+                  onClick={(e) => { e.stopPropagation(); onTopicSelect(topic.id) }}
+                  className={`w-full ${color.bg} text-white font-medium py-2 rounded-md transition-colors duration-150 flex items-center justify-center`}
+                  aria-label={`Explore ${topic.title}`}
+                >
+                  <i className="fas fa-arrow-right mr-2"></i>
+                  Explore
+                </button>
+              </div>
             </div>
-          </div>
+          </article>
         )
       })}
     </div>
