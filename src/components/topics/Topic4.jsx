@@ -282,14 +282,14 @@ const Topic4 = () => {
                     <p className="text-gray-600 mb-4">
                       The tool implements the Green Software Foundation's SCI specification for standardized carbon scoring.
                     </p>
-                    <div className="text-center p-4 bg-white rounded-lg shadow-inner">
-                      <p className="text-2xl font-mono text-purple-800">SCI = ((E × I) + M) / R</p>
+                    <div className="text-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-inner">
+                      <p className="text-2xl font-mono text-purple-800 dark:text-purple-300">SCI = ((E × I) + M) / R</p>
                     </div>
                     <ul className="mt-4 space-y-2 text-sm text-gray-600">
-                      <li><strong className="text-gray-800">E</strong> = Energy consumed (from Component I)</li>
-                      <li><strong className="text-gray-800">I</strong> = Location-based Carbon Intensity</li>
-                      <li><strong className="text-gray-800">M</strong> = Embodied Carbon</li>
-                      <li><strong className="text-gray-800">R</strong> = Functional Unit</li>
+                      <li><strong className="text-gray-800 dark:text-gray-200">E</strong> = Energy consumed (from Component I)</li>
+                      <li><strong className="text-gray-800 dark:text-gray-200">I</strong> = Location-based Carbon Intensity</li>
+                      <li><strong className="text-gray-800 dark:text-gray-200">M</strong> = Embodied Carbon</li>
+                      <li><strong className="text-gray-800 dark:text-gray-200">R</strong> = Functional Unit</li>
                     </ul>
                   </div>
                 </div>

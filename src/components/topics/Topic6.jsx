@@ -70,7 +70,7 @@ const Topic6 = () => {
         <p className="text-center text-gray-600 mb-6 max-w-2xl mx-auto">
           Our solution uses a three-layer architecture to create a sustainable digital commons for community mobility.
         </p>
-        <div className="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+  <div className="max-w-3xl mx-auto bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">
           <div className="flex flex-col items-center text-center">
             <div className="w-full p-6 bg-cyan-100 rounded-t-lg border-b-2 border-cyan-300">
               <h4 className="text-xl font-semibold text-cyan-800">Layer 3: The Incentive Layer</h4>
@@ -237,17 +237,17 @@ const Topic6 = () => {
                   <div className="bg-gray-50 border rounded-lg p-4">
                     <h6 className="font-semibold text-center mb-2 text-cyan-600">Event-Driven Architecture</h6>
                     <div className="space-y-2">
-                      <div className="grid grid-cols-2 gap-2">
-                        <div className="p-2 border rounded bg-white text-center text-xs">Driver App</div>
-                        <div className="p-2 border rounded bg-white text-center text-xs">Rider App</div>
+                        <div className="grid grid-cols-2 gap-2">
+                        <div className="p-2 border rounded bg-white dark:bg-gray-800 text-center text-xs">Driver App</div>
+                        <div className="p-2 border rounded bg-white dark:bg-gray-800 text-center text-xs">Rider App</div>
                       </div>
                       <div className="text-center">↓ ↑</div>
-                      <div className="p-2 border-2 border-cyan-400 rounded bg-white text-center font-semibold text-sm">API Gateway</div>
+                      <div className="p-2 border-2 border-cyan-400 rounded bg-white dark:bg-gray-800 text-center font-semibold text-sm">API Gateway</div>
                       <div className="text-center">↓</div>
                       <div className="p-4 bg-cyan-600 text-white rounded-lg text-center font-semibold text-sm">EVENT BUS</div>
                       <div className="grid grid-cols-2 gap-2">
-                        <div className="p-2 border rounded bg-white text-center text-xs">User Service</div>
-                        <div className="p-2 border rounded bg-white text-center text-xs">Location Service</div>
+                        <div className="p-2 border rounded bg-white dark:bg-gray-800 text-center text-xs">User Service</div>
+                        <div className="p-2 border rounded bg-white dark:bg-gray-800 text-center text-xs">Location Service</div>
                       </div>
                     </div>
                   </div>
@@ -282,15 +282,15 @@ const Topic6 = () => {
                         <h5 className="font-bold text-cyan-700">Community Mobility</h5>
                         <span className="text-xs font-bold text-green-600">Online</span>
                       </div>
-                      <div className="bg-gray-100 p-3 rounded-lg mb-4">
-                        <h6 className="text-sm font-semibold text-gray-800">Your Karma Score</h6>
+                      <div className="bg-gray-100 dark:bg-gray-700 p-3 rounded-lg mb-4">
+                        <h6 className="text-sm font-semibold text-gray-800 dark:text-gray-200">Your Karma Score</h6>
                         <p className="text-xs text-gray-600">Current: <span className="font-bold text-cyan-600">850</span></p>
                         <div className="w-full bg-gray-200 rounded-full h-2 mt-1">
                           <div className="bg-cyan-600 h-2 rounded-full" style={{ width: '85%' }}></div>
                         </div>
                       </div>
-                      <div className="bg-gray-100 p-3 rounded-lg mb-4">
-                        <h6 className="text-sm font-semibold text-gray-800">Available Rides</h6>
+                      <div className="bg-gray-100 dark:bg-gray-700 p-3 rounded-lg mb-4">
+                        <h6 className="text-sm font-semibold text-gray-800 dark:text-gray-200">Available Rides</h6>
                         <p className="text-xs text-gray-600">3 drivers available on your route</p>
                       </div>
                       <button className="w-full bg-cyan-600 text-white font-medium py-3 rounded-lg text-sm mt-auto">Request Ride</button>

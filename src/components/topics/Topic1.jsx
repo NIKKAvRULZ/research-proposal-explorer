@@ -223,13 +223,13 @@ const Topic1 = () => {
                   <div className="bg-gray-50 border rounded-lg p-4">
                     <h6 className="font-semibold text-center mb-2 text-indigo-600">Cloud Platform Architecture</h6>
                     <div className="space-y-2">
-                      <div className="p-2 border rounded bg-white text-center text-sm">User App & AI Model</div>
+                      <div className="p-2 border rounded bg-white dark:bg-gray-800 text-center text-sm">User App & AI Model</div>
                       <div className="text-center">↓</div>
-                      <div className="p-2 border-2 border-indigo-400 rounded bg-white text-center font-semibold">API Gateway</div>
+                      <div className="p-2 border-2 border-indigo-400 rounded bg-white dark:bg-gray-800 text-center font-semibold">API Gateway</div>
                       <div className="text-center">↓</div>
                       <div className="grid grid-cols-2 gap-2">
-                        <div className="p-2 border rounded bg-white text-center text-xs">Auth Service</div>
-                        <div className="p-2 border rounded bg-white text-center text-xs">Data Ingestion</div>
+                        <div className="p-2 border rounded bg-white dark:bg-gray-800 text-center text-xs">Auth Service</div>
+                        <div className="p-2 border rounded bg-white dark:bg-gray-800 text-center text-xs">Data Ingestion</div>
                       </div>
                     </div>
                   </div>
