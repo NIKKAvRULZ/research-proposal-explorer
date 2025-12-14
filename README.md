@@ -1,153 +1,108 @@
-# Research Proposal Explorer
+# 🔬 Research Proposal Explorer
 
-A modern, interactive web application built with React and Vite for exploring and comparing research proposals. This project features a clean UI with dark/light theme support, data visualizations using Chart.js, and responsive design powered by Tailwind CSS.
+<div align="center">
 
-## 🚀 Features
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=Vite&logoColor=white)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Chart.js](https://img.shields.io/badge/Chart.js-F5788D?style=for-the-badge&logo=chart.js&logoColor=white)](https://www.chartjs.org/)
+[![SLIIT](https://img.shields.io/badge/SLIIT-Academic%20Project-orange?style=for-the-badge)](https://www.sliit.lk/)
 
-- **Interactive Topic Navigation**: Browse through 6 different research topics with smooth navigation
-- **Dark/Light Theme**: Toggle between dark and light modes for comfortable viewing
-- **Data Visualizations**: Interactive charts powered by Chart.js for project comparisons
-- **Responsive Design**: Mobile-friendly interface using Tailwind CSS
-- **Modern UI Components**: Reusable card and chart components
-- **Smooth Scrolling**: Back-to-top button for enhanced user experience
-- **Fast Performance**: Built with Vite for lightning-fast development and optimized builds
+**A modern, interactive platform to explore, visualize, and compare academic research proposals.**
 
-## 📋 Prerequisites
+[View Demo](#) · [Report Bug](#) · [Request Feature](#)
 
-Before you begin, ensure you have the following installed:
-- [Node.js](https://nodejs.org/) (version 16.0 or higher)
-- npm (comes with Node.js) or yarn
-
-## 🛠️ Installation
-
-1. Clone the repository:
-```bash
-git clone https://github.com/NIKKAvRULZ/research-proposal-explorer.git
-cd research-proposal-explorer
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-## 🚦 Getting Started
-
-### Development Mode
-
-Start the development server with hot module replacement:
-
-```bash
-npm run dev
-```
-
-The application will open at `http://localhost:5173` (default Vite port).
-
-### Production Build
-
-Create an optimized production build:
-
-```bash
-npm run build
-```
-
-### Preview Production Build
-
-Preview the production build locally:
-
-```bash
-npm run preview
-```
-
-### Linting
-
-Run ESLint to check code quality:
-
-```bash
-npm run lint
-```
-
-## 📁 Project Structure
-
-```
-research-proposal-explorer/
-├── public/              # Static assets
-├── src/
-│   ├── assets/         # Images, fonts, and other assets
-│   ├── components/     # React components
-│   │   ├── common/     # Shared components (Header, Footer, Navigation)
-│   │   ├── home/       # Home page components
-│   │   ├── topics/     # Topic pages (Topic1-6)
-│   │   └── ui/         # UI components (Card, Chart)
-│   ├── contexts/       # React Context (ThemeContext)
-│   ├── hooks/          # Custom React hooks
-│   ├── styles/         # Global styles
-│   ├── utils/          # Utility functions and configurations
-│   ├── App.jsx         # Main application component
-│   ├── main.jsx        # Application entry point
-│   └── index.css       # Global CSS
-├── eslint.config.js    # ESLint configuration
-├── tailwind.config.js  # Tailwind CSS configuration
-├── vite.config.js      # Vite configuration
-└── package.json        # Project dependencies and scripts
-```
-
-## 🎨 Tech Stack
-
-- **Frontend Framework**: [React](https://react.dev/) 18.2.0
-- **Build Tool**: [Vite](https://vitejs.dev/) 4.4.5
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/) 3.3.3
-- **Charts**: [Chart.js](https://www.chartjs.org/) 4.4.0 with [react-chartjs-2](https://react-chartjs-2.js.org/) 5.2.0
-- **Linting**: [ESLint](https://eslint.org/) with React plugins
-- **State Management**: React Context API
-
-## 🔧 Configuration
-
-### Tailwind CSS
-
-Tailwind is configured in [tailwind.config.js](tailwind.config.js). Customize your theme, colors, and utilities here.
-
-### ESLint
-
-ESLint rules are defined in [eslint.config.js](eslint.config.js). The project uses recommended React and React Hooks rules.
-
-### Vite
-
-Vite configuration can be found in [vite.config.js](vite.config.js), including the React plugin setup.
-
-## 🌙 Theme Support
-
-The application supports both dark and light themes. Users can toggle between themes using the theme switcher in the header. Theme preference is managed through React Context.
-
-## 📊 Charts and Visualizations
-
-The project uses Chart.js for data visualizations. Chart configurations are centralized in [src/utils/chartConfigs.js](src/utils/chartConfigs.js) for easy customization and reusability.
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📝 License
-
-This project is private and intended for academic purposes at SLIIT.
-
-## 👨‍💻 Author
-
-**NIKKAvRULZ**
-- GitHub: [@NIKKAvRULZ](https://github.com/NIKKAvRULZ)
-
-## 🙏 Acknowledgments
-
-- SLIIT (Sri Lanka Institute of Information Technology)
-- React and Vite communities
-- All contributors and supporters of this project
+</div>
 
 ---
 
-Made with ❤️ for research exploration
+## 📖 About The Project
+
+**Research Proposal Explorer** is a sleek web application designed to bridge the gap between complex academic data and intuitive visualization. Built for the academic community at **SLIIT**, this tool allows students and reviewers to navigate through distinct research topics, comparing data points through interactive charts and a responsive interface.
+
+### ✨ Key Features
+
+* **🧭 Smart Navigation**: Seamlessly browse through 6 distinct research domains with a fluid, animated interface.
+* **📊 Dynamic Visualization**: Real-time data rendering using **Chart.js** to compare project metrics and proposal statistics.
+* **🌓 Adaptive Theming**: Native Dark/Light mode support that respects user system preferences, powered by React Context.
+* **📱 Fully Responsive**: A mobile-first approach using **Tailwind CSS** ensures the app looks great on tablets, phones, and desktops.
+* **⚡ High Performance**: Powered by **Vite** for instant server starts and optimized production builds.
+
+---
+
+## 📸 Screenshots
+
+| Light Mode | Dark Mode |
+|:---:|:---:|
+| ![Light Mode Screenshot](https://via.placeholder.com/600x300.png?text=Dashboard+Light+Mode) | ![Dark Mode Screenshot](https://via.placeholder.com/600x300.png?text=Dashboard+Dark+Mode) |
+
+---
+
+## 🛠️ Tech Stack
+
+This project leverages the latest ecosystem tools for a robust development experience.
+
+| Category | Technology | Version |
+| :--- | :--- | :--- |
+| **Framework** | [React](https://react.dev/) | `^18.2.0` |
+| **Build Tool** | [Vite](https://vitejs.dev/) | `^4.4.5` |
+| **Styling** | [Tailwind CSS](https://tailwindcss.com/) | `^3.3.3` |
+| **Visualization** | [Chart.js](https://www.chartjs.org/) | `^4.4.0` |
+| **Linting** | [ESLint](https://eslint.org/) | `^8.x` |
+
+---
+
+## 🚀 Getting Started
+
+Follow these steps to set up the project locally.
+
+### Prerequisites
+
+* **Node.js** (v16.0 or higher)
+* **npm** or **yarn**
+
+### Installation
+
+1.  **Clone the repository**
+    ```bash
+    git clone [https://github.com/NIKKAvRULZ/research-proposal-explorer.git](https://github.com/NIKKAvRULZ/research-proposal-explorer.git)
+    cd research-proposal-explorer
+    ```
+
+2.  **Install dependencies**
+    ```bash
+    npm install
+    ```
+
+3.  **Start the development server**
+    ```bash
+    npm run dev
+    ```
+    > The app will launch at `http://localhost:5173`
+
+---
+
+## 📁 Project Structure
+
+<details>
+<summary><b>Click to expand file tree</b></summary>
+
+```bash
+research-proposal-explorer/
+├── 📂 public/              # Static assets (favicons, manifest)
+├── 📂 src/
+│   ├── 📂 assets/          # Images, fonts, SVG icons
+│   ├── 📂 components/      # Reusable React components
+│   │   ├── 📂 common/      # Header, Footer, Navbar
+│   │   ├── 📂 home/        # Landing page sections
+│   │   ├── 📂 topics/      # Individual Research Topic pages
+│   │   └── 📂 ui/          # Atomic components (Cards, Buttons, Charts)
+│   ├── 📂 contexts/        # ThemeContext & Global State
+│   ├── 📂 hooks/           # Custom hooks (useTheme, useData)
+│   ├── 📂 styles/          # Global Tailwind directives
+│   ├── 📂 utils/           # Chart configs & Helper functions
+│   ├── 📄 App.jsx          # Root Component
+│   └── 📄 main.jsx         # Entry Point
+├── 📄 eslint.config.js     # Code quality rules
+├── 📄 tailwind.config.js   # Style configurations
+└── 📄 vite.config.js       # Build configurations
