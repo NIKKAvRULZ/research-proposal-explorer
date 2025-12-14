@@ -10,7 +10,7 @@
 
 **A modern, interactive platform to explore, visualize, and compare academic research proposals.**
 
-[View Demo](#) · [Report Bug](#) · [Request Feature](#)
+[View Demo](https://research-proposal-explorer.vercel.app/) · [Report Bug](#) · [Request Feature](#)
 
 </div>
 
