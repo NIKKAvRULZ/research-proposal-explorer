@@ -34,7 +34,7 @@
 
 | Light Mode | Dark Mode |
 |:---:|:---:|
-| ![Light Mode Screenshot](https://via.placeholder.com/600x300.png?text=Dashboard+Light+Mode) | ![Dark Mode Screenshot](https://via.placeholder.com/600x300.png?text=Dashboard+Dark+Mode) |
+| ![Light Mode Screenshot](light.png) | ![Dark Mode Screenshot](dark.png) |
 
 ---
 
